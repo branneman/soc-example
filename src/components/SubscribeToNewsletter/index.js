@@ -1,36 +1,17 @@
-import React, { useRef, useState } from 'react'
-import { isValidEmail } from '../../util/email'
+import React, { useRef } from 'react'
+import useForm from './useForm'
 import './index.css'
 
 export default function SubscribeToNewsletter() {
   const emailRef = useRef(null)
 
-  const [hasSubscribed, setHasSubscribed] = useState(false)
-  const [emailIsValid, setEmailIsValid] = useState(false)
-  const [emailIsTouched, setEmailIsTouched] =
-    useState(false)
-
-  const isValid = () => {
-    const email = emailRef.current.value
-    return isValidEmail(email)
-  }
-
-  const onSubmit = (evt) => {
-    evt.preventDefault()
-
-    const email = emailRef.current.value
-    if (!isValid(email)) {
-      return false
-    }
-
-    setHasSubscribed(true)
-  }
-
-  const onChange = (evt) => {
-    const email = emailRef.current.value
-    setEmailIsTouched(true)
-    setEmailIsValid(isValid(email))
-  }
+  const [
+    hasSubscribed,
+    emailIsValid,
+    emailIsTouched,
+    onSubmit,
+    onChange,
+  ] = useForm(emailRef)
 
   if (hasSubscribed) {
     return <p className="hassubscribed">Thanks!</p>
