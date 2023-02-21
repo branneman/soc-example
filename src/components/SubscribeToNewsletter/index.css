@@ -1,0 +1,32 @@
+.hassubscribed {}
+
+.form {
+  padding-bottom: 1em;
+}
+
+.form__row {
+  margin-bottom: 1em;
+}
+
+.form__label {
+  display: block;
+  margin: 0 0 .5em 0;
+}
+
+.form__field {
+  width: 100%;
+  width: calc(100% - .8em);
+  margin: 0;
+  padding: .2em;
+  font-size: 1em;
+}
+.form__field--valid {
+  border-color: green;
+}
+.form__field--invalid {
+  border-color: red;
+}
+
+.form__submit {
+  margin: 0;
+}
