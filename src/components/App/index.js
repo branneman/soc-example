@@ -5,11 +5,11 @@ import './index.css'
 export default function App() {
   return (
     <React.StrictMode>
-      <main className='outer'>
-        <header className='header'>
+      <main className="outer">
+        <header className="header">
           <h1>Newsletter</h1>
         </header>
-        <section className='main'>
+        <section className="main">
           <SubscribeToNewsletter />
         </section>
       </main>

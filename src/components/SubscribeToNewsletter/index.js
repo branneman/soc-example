@@ -7,7 +7,8 @@ export default function SubscribeToNewsletter() {
 
   const [hasSubscribed, setHasSubscribed] = useState(false)
   const [emailIsValid, setEmailIsValid] = useState(false)
-  const [emailIsTouched, setEmailIsTouched] = useState(false)
+  const [emailIsTouched, setEmailIsTouched] =
+    useState(false)
 
   const isValid = () => {
     const email = emailRef.current.value
@@ -32,7 +33,7 @@ export default function SubscribeToNewsletter() {
   }
 
   if (hasSubscribed) {
-    return <p className='hassubscribed'>Thanks!</p>
+    return <p className="hassubscribed">Thanks!</p>
   }
 
   const fieldClass =
@@ -43,22 +44,22 @@ export default function SubscribeToNewsletter() {
       : ''
 
   return (
-    <form onSubmit={onSubmit} className='form'>
-      <div className='form__row'>
-        <label htmlFor='email' className='form__label'>
+    <form onSubmit={onSubmit} className="form">
+      <div className="form__row">
+        <label htmlFor="email" className="form__label">
           Email:
         </label>
         <input
           ref={emailRef}
-          id='email'
+          id="email"
           className={`form__field${fieldClass}`}
           onChange={onChange}
-          type='text'
-          name='email'
+          type="text"
+          name="email"
         />
       </div>
-      <div className='form__row'>
-        <button type='submit' className='form__submit'>
+      <div className="form__row">
+        <button type="submit" className="form__submit">
           Subscribe
         </button>
       </div>
